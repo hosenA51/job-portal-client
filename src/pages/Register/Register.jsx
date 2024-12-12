@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import registerLottieData from '../../assets/lottie/register.json';
 import AuthContext from '../../context/AuthContext/AuthContext';
 import { ToastContainer, toast } from 'react-toastify';
+import SocialLogin from '../shared/SocialLogin';
 
 const Register = () => {
 
@@ -69,10 +70,10 @@ const Register = () => {
                             <button className="btn btn-primary">Register</button>
                         </div>
                     </form>
-                    
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
-            <ToastContainer/>
+            <ToastContainer />
         </div>
     );
 };
