@@ -14,7 +14,7 @@ const AddJob = () => {
         const initialData = Object.fromEntries(formData.entries());
         console.log(initialData);
         const { min, max, currency, ...newJob } = initialData;
-        newJob.salaryRange = { min, max, currency }
+        newJob.salaryRange = { min: parseInt(min), max: parseInt(max), currency }
         newJob.requirements = newJob.requirements.split('\n')
         newJob.responsibilities = newJob.responsibilities.split('\n')
         console.log(newJob);
@@ -91,10 +91,10 @@ const AddJob = () => {
                         <label className="label">
                             <span className="label-text">Salary Range</span>
                         </label>
-                        <input type="text" placeholder="Min" name='min' className="input input-bordered" required />
+                        <input type="number" placeholder="Min" name='min' className="input input-bordered" required />
                     </div>
                     <div className="form-control">
-                        <input type="text" placeholder="Max" name='max' className="input input-bordered" required />
+                        <input type="number" placeholder="Max" name='max' className="input input-bordered" required />
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -148,7 +148,7 @@ const AddJob = () => {
                     <label className="label">
                         <span className="label-text">HR Email</span>
                     </label>
-                    <input type="email" defaultValue={user?.email} placeholder="HR Email" name='hr_email' className="input input-bordered" required />
+                    <input type="email" defaultValue={user?.email} placeholder="HR Email" name='hr_email' className="input input-bordered" required readOnly />
                 </div>
                 {/* Application Deadline */}
                 <div className="form-control">
